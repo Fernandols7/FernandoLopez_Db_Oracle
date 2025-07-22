@@ -1,0 +1,72 @@
+CREATE TABLE "employees" (
+    "employee_id" SERIAL PRIMARY KEY,
+    "first_name" VARCHAR(20),
+    "last_name" VARCHAR(25) NOT NULL,
+    "email" VARCHAR(25) NOT NULL UNIQUE,
+    "phone_number" VARCHAR(20),
+    "hire_date" DATE NOT NULL,
+    "job_id" VARCHAR(10) NOT NULL,
+    "salary" NUMERIC(8, 2) CHECK (salary > 0),
+    "commission_pct" NUMERIC(2, 2),
+    "manager_id" INTEGER,
+    "department_id" INTEGER,
+    "bonus" VARCHAR(5)
+);
+
+
+ALTER TABLE employees
+ALTER COLUMN email TYPE VARCHAR(50);  -- O cualquier longitud que necesites
+
+
+
+INSERT INTO "employees" ("first_name", "last_name", "email", "phone_number", "hire_date", "job_id", "salary", "commission_pct", "manager_id", "department_id", "bonus")
+VALUES
+('John', 'Doe', 'johndoe@example.com', '555-1234', '2020-01-15', 'IT_PROG', 60000, 0.05, 101, 10, '500'),
+('Jane', 'Smith', 'janesmith@example.com', '555-5678', '2019-02-20', 'HR_REP', 55000, 0.04, 102, 20, '450'),
+('Michael', 'Johnson', 'mjohnson@example.com', '555-8765', '2021-03-10', 'FI_ACCOUNT', 70000, 0.06, 103, 30, '600'),
+('Emily', 'Davis', 'emilydavis@example.com', '555-4321', '2018-05-25', 'IT_PROG', 65000, 0.05, 104, 40, '550'),
+('Chris', 'Taylor', 'chris.taylor@example.com', '555-1122', '2022-07-18', 'MK_REP', 52000, 0.04, 105, 50, '500'),
+('Lisa', 'Moore', 'lisa.moore@example.com', '555-3344', '2017-11-03', 'AD_ASST', 45000, 0.03, 106, 60, '480'),
+('David', 'Wilson', 'david.wilson@example.com', '555-2233', '2020-10-12', 'AC_ACCOUNT', 72000, 0.07, 107, 10, '700'),
+('Karen', 'Brown', 'karen.brown@example.com', '555-9988', '2021-09-28', 'FI_ACCOUNT', 68000, 0.05, 108, 20, '550'),
+('James', 'Garcia', 'james.garcia@example.com', '555-6677', '2019-06-15', 'AD_ASST', 46000, 0.04, 109, 30, '500'),
+('Olivia', 'Martinez', 'olivia.martinez@example.com', '555-8899', '2021-01-09', 'IT_PROG', 62000, 0.05, 110, 40, '520'),
+('Ethan', 'Miller', 'ethan.miller@example.com', '555-5566', '2022-04-07', 'HR_REP', 53000, 0.04, 111, 50, '480'),
+('Sophia', 'Hernandez', 'sophia.hernandez@example.com', '555-7788', '2018-08-25', 'FI_ACCOUNT', 70000, 0.06, 112, 60, '600'),
+('Daniel', 'Lee', 'daniel.lee@example.com', '555-4455', '2020-02-14', 'MK_REP', 51000, 0.04, 113, 10, '460'),
+('Charlotte', 'Lopez', 'charlotte.lopez@example.com', '555-2234', '2019-04-30', 'AC_ACCOUNT', 73000, 0.07, 114, 20, '700'),
+('Amelia', 'Walker', 'amelia.walker@example.com', '555-8891', '2022-03-22', 'AD_ASST', 45500, 0.03, 115, 30, '490'),
+('William', 'Hall', 'william.hall@example.com', '555-1123', '2020-08-19', 'IT_PROG', 61000, 0.05, 116, 40, '540'),
+('Isabella', 'Allen', 'isabella.allen@example.com', '555-6655', '2021-06-05', 'HR_REP', 54500, 0.04, 117, 50, '510'),
+('Lucas', 'Young', 'lucas.young@example.com', '555-3345', '2021-12-01', 'FI_ACCOUNT', 75000, 0.07, 118, 60, '720'),
+('Mia', 'King', 'mia.king@example.com', '555-7789', '2019-09-30', 'MK_REP', 49500, 0.04, 119, 10, '480'),
+('Benjamin', 'Scott', 'benjamin.scott@example.com', '555-2236', '2020-07-12', 'AC_ACCOUNT', 76000, 0.08, 120, 20, '750'),
+('Charlotte', 'Green', 'charlotte.green@example.com', '555-3347', '2021-02-18', 'AD_ASST', 47000, 0.03, 121, 30, '500'),
+('Henry', 'Adams', 'henry.adams@example.com', '555-5567', '2020-03-03', 'IT_PROG', 63000, 0.05, 122, 40, '560'),
+('Jack', 'Baker', 'jack.baker@example.com', '555-6678', '2022-01-15', 'HR_REP', 54000, 0.04, 123, 50, '490'),
+('Zoe', 'Carter', 'zoe.carter@example.com', '555-2234', '2018-10-11', 'FI_ACCOUNT', 69000, 0.06, 124, 60, '650'),
+('Matthew', 'Nelson', 'matthew.nelson@example.com', '555-4456', '2019-12-25', 'MK_REP', 51500, 0.04, 125, 10, '470'),
+('Liam', 'Perez', 'liam.perez@example.com', '555-2235', '2021-08-20', 'AC_ACCOUNT', 74000, 0.07, 126, 20, '720'),
+('Ava', 'Roberts', 'ava.roberts@example.com', '555-5568', '2020-04-05', 'AD_ASST', 46000, 0.03, 127, 30, '480'),
+('Jacob', 'Murphy', 'jacob.murphy@example.com', '555-6679', '2021-11-12', 'IT_PROG', 64000, 0.05, 128, 40, '550'),
+('Madison', 'James', 'madison.james@example.com', '555-7781', '2022-09-01', 'HR_REP', 53000, 0.04, 129, 50, '470'),
+('Samuel', 'Harris', 'samuel.harris@example.com', '555-2237', '2020-01-22', 'FI_ACCOUNT', 71000, 0.07, 130, 60, '690'),
+('Ella', 'Clark', 'ella.clark@example.com', '555-3348', '2021-05-18', 'MK_REP', 50000, 0.04, 131, 10, '490'),
+('David', 'Rodriguez', 'david.rodriguez@example.com', '555-5569', '2020-09-28', 'AC_ACCOUNT', 75000, 0.07, 132, 20, '710'),
+('Sebastian', 'Lewis', 'sebastian.lewis@example.com', '555-6670', '2022-03-15', 'AD_ASST', 45000, 0.03, 133, 30, '460'),
+('Henry', 'Walker', 'henry.walker@example.com', '555-2238', '2021-04-22', 'IT_PROG', 62000, 0.05, 134, 40, '530'),
+('Ella', 'Allen', 'ella.allen@example.com', '555-3349', '2022-10-10', 'HR_REP', 51000, 0.04, 135, 50, '480'),
+('Mason', 'King', 'mason.king@example.com', '555-4457', '2019-07-07', 'FI_ACCOUNT', 68000, 0.06, 136, 60, '600'),
+('Scarlett', 'Young', 'scarlett.young@example.com', '555-5560', '2021-08-09', 'MK_REP', 52500, 0.04, 137, 10, '500'),
+('Wyatt', 'White', 'wyatt.white@example.com', '555-6671', '2020-11-10', 'AC_ACCOUNT', 76000, 0.08, 138, 20, '740'),
+('Grayson', 'Scott', 'grayson.scott@example.com', '555-7782', '2021-03-05', 'AD_ASST', 47500, 0.03, 139, 30, '490'),
+('Jack', 'Taylor', 'jack.taylor@example.com', '555-2239', '2022-05-12', 'IT_PROG', 65000, 0.05, 140, 40, '560'),
+('Maya', 'Moore', 'maya.moore@example.com', '555-8893', '2019-08-30', 'HR_REP', 54000, 0.04, 141, 50, '500'),
+('Lily', 'Davis', 'lily.davis@example.com', '555-3340', '2020-12-15', 'FI_ACCOUNT', 70000, 0.07, 142, 60, '650'),
+('Samuel', 'Wilson', 'samuel.wilson@example.com', '555-5561', '2021-09-18', 'MK_REP', 51000, 0.04, 143, 10, '480'),
+('Benjamin', 'White', 'benjamin.white@example.com', '555-6672', '2022-01-22', 'AC_ACCOUNT', 74000, 0.07, 144, 20, '720'),
+('Zara', 'Hughes', 'zara.hughes@example.com', '555-7783', '2020-06-30', 'AD_ASST', 48000, 0.03, 145, 30, '470'),
+('Ryan', 'Lewis', 'ryan.lewis@example.com', '555-2230', '2021-04-10', 'IT_PROG', 63000, 0.05, 146, 40, '550'),
+('Victoria', 'Martinez', 'victoria.martinez@example.com', '555-3342', '2022-07-28', 'HR_REP', 52000, 0.04, 147, 50, '490'),
+('Hunter', 'Thompson', 'hunter.thompson@example.com', '555-5562', '2020-11-20', 'FI_ACCOUNT', 69000, 0.06, 148, 60, '640'),
+('Daniel', 'Gonzalez', 'daniel.gonzalez@example.com', '555-6673', '2019-10-19', 'MK_REP', 51500, 0.04, 149, 10, '500');
