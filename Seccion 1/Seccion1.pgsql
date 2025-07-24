@@ -19,57 +19,28 @@ ALTER COLUMN email TYPE VARCHAR(50);  -- O cualquier longitud que necesites
 
 
 
-INSERT INTO "employees" ("first_name", "last_name", "email", "phone_number", "hire_date", "job_id", "salary", "commission_pct", "manager_id", "department_id", "bonus")
-VALUES
-('John', 'Doe', 'johndoe@example.com', '555-1234', '2020-01-15', 'IT_PROG', 60000, 0.05, 101, 10, '500'),
-('Jane', 'Smith', 'janesmith@example.com', '555-5678', '2019-02-20', 'HR_REP', 55000, 0.04, 102, 20, '450'),
-('Michael', 'Johnson', 'mjohnson@example.com', '555-8765', '2021-03-10', 'FI_ACCOUNT', 70000, 0.06, 103, 30, '600'),
-('Emily', 'Davis', 'emilydavis@example.com', '555-4321', '2018-05-25', 'IT_PROG', 65000, 0.05, 104, 40, '550'),
-('Chris', 'Taylor', 'chris.taylor@example.com', '555-1122', '2022-07-18', 'MK_REP', 52000, 0.04, 105, 50, '500'),
-('Lisa', 'Moore', 'lisa.moore@example.com', '555-3344', '2017-11-03', 'AD_ASST', 45000, 0.03, 106, 60, '480'),
-('David', 'Wilson', 'david.wilson@example.com', '555-2233', '2020-10-12', 'AC_ACCOUNT', 72000, 0.07, 107, 10, '700'),
-('Karen', 'Brown', 'karen.brown@example.com', '555-9988', '2021-09-28', 'FI_ACCOUNT', 68000, 0.05, 108, 20, '550'),
-('James', 'Garcia', 'james.garcia@example.com', '555-6677', '2019-06-15', 'AD_ASST', 46000, 0.04, 109, 30, '500'),
-('Olivia', 'Martinez', 'olivia.martinez@example.com', '555-8899', '2021-01-09', 'IT_PROG', 62000, 0.05, 110, 40, '520'),
-('Ethan', 'Miller', 'ethan.miller@example.com', '555-5566', '2022-04-07', 'HR_REP', 53000, 0.04, 111, 50, '480'),
-('Sophia', 'Hernandez', 'sophia.hernandez@example.com', '555-7788', '2018-08-25', 'FI_ACCOUNT', 70000, 0.06, 112, 60, '600'),
-('Daniel', 'Lee', 'daniel.lee@example.com', '555-4455', '2020-02-14', 'MK_REP', 51000, 0.04, 113, 10, '460'),
-('Charlotte', 'Lopez', 'charlotte.lopez@example.com', '555-2234', '2019-04-30', 'AC_ACCOUNT', 73000, 0.07, 114, 20, '700'),
-('Amelia', 'Walker', 'amelia.walker@example.com', '555-8891', '2022-03-22', 'AD_ASST', 45500, 0.03, 115, 30, '490'),
-('William', 'Hall', 'william.hall@example.com', '555-1123', '2020-08-19', 'IT_PROG', 61000, 0.05, 116, 40, '540'),
-('Isabella', 'Allen', 'isabella.allen@example.com', '555-6655', '2021-06-05', 'HR_REP', 54500, 0.04, 117, 50, '510'),
-('Lucas', 'Young', 'lucas.young@example.com', '555-3345', '2021-12-01', 'FI_ACCOUNT', 75000, 0.07, 118, 60, '720'),
-('Mia', 'King', 'mia.king@example.com', '555-7789', '2019-09-30', 'MK_REP', 49500, 0.04, 119, 10, '480'),
-('Benjamin', 'Scott', 'benjamin.scott@example.com', '555-2236', '2020-07-12', 'AC_ACCOUNT', 76000, 0.08, 120, 20, '750'),
-('Charlotte', 'Green', 'charlotte.green@example.com', '555-3347', '2021-02-18', 'AD_ASST', 47000, 0.03, 121, 30, '500'),
-('Henry', 'Adams', 'henry.adams@example.com', '555-5567', '2020-03-03', 'IT_PROG', 63000, 0.05, 122, 40, '560'),
-('Jack', 'Baker', 'jack.baker@example.com', '555-6678', '2022-01-15', 'HR_REP', 54000, 0.04, 123, 50, '490'),
-('Zoe', 'Carter', 'zoe.carter@example.com', '555-2234', '2018-10-11', 'FI_ACCOUNT', 69000, 0.06, 124, 60, '650'),
-('Matthew', 'Nelson', 'matthew.nelson@example.com', '555-4456', '2019-12-25', 'MK_REP', 51500, 0.04, 125, 10, '470'),
-('Liam', 'Perez', 'liam.perez@example.com', '555-2235', '2021-08-20', 'AC_ACCOUNT', 74000, 0.07, 126, 20, '720'),
-('Ava', 'Roberts', 'ava.roberts@example.com', '555-5568', '2020-04-05', 'AD_ASST', 46000, 0.03, 127, 30, '480'),
-('Jacob', 'Murphy', 'jacob.murphy@example.com', '555-6679', '2021-11-12', 'IT_PROG', 64000, 0.05, 128, 40, '550'),
-('Madison', 'James', 'madison.james@example.com', '555-7781', '2022-09-01', 'HR_REP', 53000, 0.04, 129, 50, '470'),
-('Samuel', 'Harris', 'samuel.harris@example.com', '555-2237', '2020-01-22', 'FI_ACCOUNT', 71000, 0.07, 130, 60, '690'),
-('Ella', 'Clark', 'ella.clark@example.com', '555-3348', '2021-05-18', 'MK_REP', 50000, 0.04, 131, 10, '490'),
-('David', 'Rodriguez', 'david.rodriguez@example.com', '555-5569', '2020-09-28', 'AC_ACCOUNT', 75000, 0.07, 132, 20, '710'),
-('Sebastian', 'Lewis', 'sebastian.lewis@example.com', '555-6670', '2022-03-15', 'AD_ASST', 45000, 0.03, 133, 30, '460'),
-('Henry', 'Walker', 'henry.walker@example.com', '555-2238', '2021-04-22', 'IT_PROG', 62000, 0.05, 134, 40, '530'),
-('Ella', 'Allen', 'ella.allen@example.com', '555-3349', '2022-10-10', 'HR_REP', 51000, 0.04, 135, 50, '480'),
-('Mason', 'King', 'mason.king@example.com', '555-4457', '2019-07-07', 'FI_ACCOUNT', 68000, 0.06, 136, 60, '600'),
-('Scarlett', 'Young', 'scarlett.young@example.com', '555-5560', '2021-08-09', 'MK_REP', 52500, 0.04, 137, 10, '500'),
-('Wyatt', 'White', 'wyatt.white@example.com', '555-6671', '2020-11-10', 'AC_ACCOUNT', 76000, 0.08, 138, 20, '740'),
-('Grayson', 'Scott', 'grayson.scott@example.com', '555-7782', '2021-03-05', 'AD_ASST', 47500, 0.03, 139, 30, '490'),
-('Jack', 'Taylor', 'jack.taylor@example.com', '555-2239', '2022-05-12', 'IT_PROG', 65000, 0.05, 140, 40, '560'),
-('Maya', 'Moore', 'maya.moore@example.com', '555-8893', '2019-08-30', 'HR_REP', 54000, 0.04, 141, 50, '500'),
-('Lily', 'Davis', 'lily.davis@example.com', '555-3340', '2020-12-15', 'FI_ACCOUNT', 70000, 0.07, 142, 60, '650'),
-('Samuel', 'Wilson', 'samuel.wilson@example.com', '555-5561', '2021-09-18', 'MK_REP', 51000, 0.04, 143, 10, '480'),
-('Benjamin', 'White', 'benjamin.white@example.com', '555-6672', '2022-01-22', 'AC_ACCOUNT', 74000, 0.07, 144, 20, '720'),
-('Zara', 'Hughes', 'zara.hughes@example.com', '555-7783', '2020-06-30', 'AD_ASST', 48000, 0.03, 145, 30, '470'),
-('Ryan', 'Lewis', 'ryan.lewis@example.com', '555-2230', '2021-04-10', 'IT_PROG', 63000, 0.05, 146, 40, '550'),
-('Victoria', 'Martinez', 'victoria.martinez@example.com', '555-3342', '2022-07-28', 'HR_REP', 52000, 0.04, 147, 50, '490'),
-('Hunter', 'Thompson', 'hunter.thompson@example.com', '555-5562', '2020-11-20', 'FI_ACCOUNT', 69000, 0.06, 148, 60, '640'),
-('Daniel', 'Gonzalez', 'daniel.gonzalez@example.com', '555-6673', '2019-10-19', 'MK_REP', 51500, 0.04, 149, 10, '500');
+INSERT INTO employees(employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id, bonus)
+VALUES 
+(100, 'Steven', 'King', 'SKING', '515.123.4567', TO_DATE('1987-06-17', 'YYYY-MM-DD'), 'AD_PRES', 24000, NULL, NULL, 90, NULL),
+(101, 'Neena', 'Kochhar', 'NKOCHHAR', '515.123.4568', TO_DATE('1989-09-21', 'YYYY-MM-DD'), 'AD_VP', 17000, NULL, 100, 90, NULL),
+(102, 'Lex', 'De Haan', 'LDEHAAN', '515.123.4569', TO_DATE('1993-01-13', 'YYYY-MM-DD'), 'AD_VP', 17000, NULL, 100, 90, NULL),
+(200, 'Jennifer', 'Whalen', 'JWHALEN', '515.123.4444', TO_DATE('1987-09-17', 'YYYY-MM-DD'), 'AD_ASST', 4400, NULL, 101, 10, NULL),
+(205, 'Shelley', 'Higgins', 'SHIGGINS', '515.123.8080', TO_DATE('1994-06-07', 'YYYY-MM-DD'), 'AC_MGR', 12000, NULL, 101, 110, NULL),
+(206, 'William', 'Gietz', 'WGIETZ', '515.123.8181', TO_DATE('1994-06-07', 'YYYY-MM-DD'), 'AC_ACCOUNT', 8300, NULL, 205, 110, NULL),
+(149, 'Eleni', 'Zlotkey', 'EZLOTKEY', '011.44.1344.429018', TO_DATE('2000-01-29', 'YYYY-MM-DD'), 'SA_MAN', 10500, 0.2, 100, 80, '1500'),
+(174, 'Ellen', 'Abel', 'EABEL', '011.44.1644.429267', TO_DATE('1996-05-11', 'YYYY-MM-DD'), 'SA_REP', 11000, 0.3, 149, 80, '1700'),
+(176, 'Jonathon', 'Taylor', 'JTAYLOR', '011.44.1644.429265', TO_DATE('1998-03-24', 'YYYY-MM-DD'), 'SA_REP', 8600, 0.2, 149, 80, '1250'),
+(178, 'Kimberely', 'Grant', 'KGRANT', '011.44.1644.429263', TO_DATE('1999-05-24', 'YYYY-MM-DD'), 'SA_REP', 7000, 0.15, 149, NULL, NULL),
+(124, 'Kevin', 'Mourgos', 'KMOURGOS', '650.123.5234', TO_DATE('1999-11-16', 'YYYY-MM-DD'), 'ST_MAN', 5800, NULL, 100, 50, NULL),
+(141, 'Trenna', 'Rajs', 'TRAJS', '650.121.8009', TO_DATE('1995-10-17', 'YYYY-MM-DD'), 'ST_CLERK', 3500, NULL, 124, 50, NULL),
+(142, 'Curtis', 'Davies', 'CDAVIES', '650.121.2994', TO_DATE('1997-01-29', 'YYYY-MM-DD'), 'ST_CLERK', 3100, NULL, 124, 50, NULL),
+(143, 'Randall', 'Matos', 'RMATOS', '650.121.2874', TO_DATE('1998-03-15', 'YYYY-MM-DD'), 'ST_CLERK', 2600, NULL, 124, 50, NULL),
+(144, 'Peter', 'Vargas', 'PVARGAS', '650.121.2004', TO_DATE('1998-07-09', 'YYYY-MM-DD'), 'ST_CLERK', 2500, NULL, 124, 50, NULL),
+(103, 'Alexander', 'Hunold', 'AHUNOLD', '590.423.4567', TO_DATE('1990-01-03', 'YYYY-MM-DD'), 'IT_PROG', 9000, NULL, 102, 60, NULL),
+(104, 'Bruce', 'Ernst', 'BERNST', '590.423.4568', TO_DATE('1991-05-21', 'YYYY-MM-DD'), 'IT_PROG', 6000, NULL, 103, 60, NULL),
+(107, 'Diana', 'Lorentz', 'DLORENTZ', '590.423.5567', TO_DATE('1999-02-07', 'YYYY-MM-DD'), 'IT_PROG', 4200, NULL, 103, 60, NULL),
+(201, 'Michael', 'Hartstein', 'MHARTSTE', '515.123.5555', TO_DATE('1996-02-17', 'YYYY-MM-DD'), 'MK_MAN', 13000, NULL, 100, 20, NULL),
+(202, 'Pat', 'Fay', 'PFAY', '603.123.6666', TO_DATE('1997-08-17', 'YYYY-MM-DD'), 'MK_REP', 6000, NULL, 201, 20, NULL);
 
 
 
@@ -145,17 +116,30 @@ CREATE TABLE departments (
 );
 
 
-INSERT INTO departments (department_id, department_name, manager_id, location_id) VALUES
-(1, 'Human Resources', 101, 1001),
-(2, 'Sales', 102, 1002),
-(3, 'Marketing', 103, 1003),
-(4, 'Finance', 104, 1004),
-(5, 'IT', 105, 1005),
-(6, 'Operations', 106, 1006),
-(7, 'Legal', 107, 1007),
-(8, 'Customer Service', 108, 1008),
-(9, 'Product Development', 109, 1009),
-(10, 'R&D', 110, 1010);
+INSERT INTO departments (department_id, department_name, manager_id, location_id)
+VALUES (10, 'Administration', 200, 1700);
+
+INSERT INTO departments (department_id, department_name, manager_id, location_id)
+VALUES (20, 'Marketing', 201, 1800);
+
+INSERT INTO departments (department_id, department_name, manager_id, location_id)
+VALUES (50, 'Shipping', 124, 1500);
+
+INSERT INTO departments (department_id, department_name, manager_id, location_id)
+VALUES (60, 'IT', 103, 1400);
+
+INSERT INTO departments (department_id, department_name, manager_id, location_id)
+VALUES (80, 'Sales', 149, 2500);
+
+INSERT INTO departments (department_id, department_name, manager_id, location_id)
+VALUES (90, 'Executive', 100, 1700);
+
+INSERT INTO departments (department_id, department_name, manager_id, location_id)
+VALUES (110, 'Accounting', 205, 1700);
+
+INSERT INTO departments (department_id, department_name, manager_id, location_id)
+VALUES (190, 'Contracting', NULL, 1700);
+
 
 
 SELECT department_name
@@ -190,27 +174,21 @@ CREATE TABLE locations (
 );
 
 
-INSERT INTO locations (location_id, street_address, postal_code, city, state_province, country_id) VALUES
-(1, '1234 Elm St', '12345', 'New York', 'New York', 'US'),
-(2, '5678 Oak Rd', '67890', 'Los Angeles', 'California', 'US'),
-(3, '9876 Pine Ave', '54321', 'Chicago', 'Illinois', 'US'),
-(4, '1357 Maple Blvd', '11223', 'Houston', 'Texas', 'US'),
-(5, '2468 Birch Ln', '99887', 'Phoenix', 'Arizona', 'US'),
-(6, '1920 Cedar St', '44556', 'Dallas', 'Texas', 'US'),
-(7, '3690 Willow Dr', '33445', 'San Francisco', 'California', 'US'),
-(8, '4567 Redwood Way', '22334', 'Seattle', 'Washington', 'US'),
-(9, '6543 Fir Ave', '66778', 'Boston', 'Massachusetts', 'US'),
-(10, '7890 Chestnut St', '55667', 'Denver', 'Colorado', 'US'),
-(11, '3210 Walnut St', '77555', 'Toronto', 'Ontario', 'CA'),
-(12, '4321 Pinecrest Rd', '66888', 'Vancouver', 'British Columbia', 'CA'),
-(13, '5432 Birchwood Ln', '66777', 'Montreal', 'Quebec', 'CA'),
-(14, '6543 Oakmont Dr', '44333', 'Calgary', 'Alberta', 'CA'),
-(15, '7654 Cedar Point', '11222', 'Ottawa', 'Ontario', 'CA'),
-(16, '8765 Maple Hill', '66766', 'London', 'England', 'GB'),
-(17, '9876 Elm Road', '55444', 'Manchester', 'England', 'GB'),
-(18, '1357 Ash St', '11333', 'Edinburgh', 'Scotland', 'GB'),
-(19, '2468 Cedar Ave', '33455', 'Sydney', 'New South Wales', 'AU'),
-(20, '3690 Willow Rd', '66789', 'Melbourne', 'Victoria', 'AU');
+INSERT INTO locations (location_id, street_address, postal_code, city, state_province, country_id)
+VALUES (1800, '460 Bloor St. W.', 'ON M5S 1X8', 'Toronto', 'Ontario', 'CA');
+
+INSERT INTO locations (location_id, street_address, postal_code, city, state_province, country_id)
+VALUES (2500, 'Magdalen Centre, The Oxford Science Park', 'OX9 9ZB', 'Oxford', 'Oxford', 'UK');
+
+INSERT INTO locations (location_id, street_address, postal_code, city, state_province, country_id)
+VALUES (1400, '2014 Jabberwocky Rd', '26192', 'Southlake', 'Texas', 'US');
+
+INSERT INTO locations (location_id, street_address, postal_code, city, state_province, country_id)
+VALUES (1500, '2011 Interiors Blvd', '99236', 'South San Francisco', 'California', 'US');
+
+INSERT INTO locations (location_id, street_address, postal_code, city, state_province, country_id)
+VALUES (1700, '2004 Charade Rd', '98199', 'Seattle', 'Washington', 'US');
+
 
 
 SELECT location_id, city, state_province
@@ -243,6 +221,3 @@ FROM employees;
 SELECT last_name "Name",
 salary*12 "Annual Salary"
 FROM employees;
-
-
-
