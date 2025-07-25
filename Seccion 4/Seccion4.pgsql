@@ -80,4 +80,108 @@ SELECT first_name, last_name, salary, department_id
 FROM employees
 WHERE department_id= 10;
 
+SELECT *
+FROM employees
+WHERE last_name = 'Smith';
 
+/*Funciones de Una Sola Fila*/
+
+SELECT country_name, MOD(airports,2)
+AS "Mod Demo"
+FROM wf_countries;
+
+/*Trabajar con fechas*/
+
+SELECT last_name, hire_date + 60
+FROM employees;
+
+/* Tabla job_history*/
+
+CREATE TABLE job_history (
+    employee_id     INTEGER NOT NULL,
+    start_date      DATE NOT NULL,
+    end_date        DATE NOT NULL,
+    job_id          VARCHAR(10) NOT NULL,
+    department_id   INTEGER,
+
+    CONSTRAINT jhist_date_interval CHECK (end_date > start_date),
+    CONSTRAINT jhist_emp_id_st_date_pk PRIMARY KEY (employee_id, start_date)
+);
+
+
+INSERT INTO job_history(employee_id, start_date, end_date, job_id, department_id)
+VALUES (200, '1987-09-17', '1993-06-17', 'AD_ASST', 90);
+
+INSERT INTO job_history(employee_id, start_date, end_date, job_id, department_id)
+VALUES (101, '1993-10-28', '1997-03-15', 'AC_MGR', 110);
+
+INSERT INTO job_history(employee_id, start_date, end_date, job_id, department_id)
+VALUES (200, '1994-07-01', '1998-12-31', 'AC_ACCOUNT', 90);
+
+INSERT INTO job_history(employee_id, start_date, end_date, job_id, department_id)
+VALUES (101, '1989-09-21', '1993-10-27', 'AC_ACCOUNT', 110);
+
+INSERT INTO job_history(employee_id, start_date, end_date, job_id, department_id)
+VALUES (176, '1999-01-01', '1999-12-31', 'SA_MAN', 80);
+
+INSERT INTO job_history(employee_id, start_date, end_date, job_id, department_id)
+VALUES (176, '1998-03-24', '1998-12-31', 'SA_REP', 80);
+
+INSERT INTO job_history(employee_id, start_date, end_date, job_id, department_id)
+VALUES (122, '1999-01-01', '1999-12-31', 'ST_CLERK', 50);
+
+INSERT INTO job_history(employee_id, start_date, end_date, job_id, department_id)
+VALUES (114, '1998-03-24', '1999-12-31', 'ST_CLERK', 50);
+
+INSERT INTO job_history(employee_id, start_date, end_date, job_id, department_id)
+VALUES (102, '1993-01-13', '1998-07-24', 'IT_PROG', 60);
+
+INSERT INTO job_history(employee_id, start_date, end_date, job_id, department_id)
+VALUES (201, '1996-02-17', '1999-12-19', 'MK_REP', 20);
+
+
+SELECT employee_id, (end_date -
+start_date)/365
+AS "Tenure in last job"
+FROM job_history;
+
+/*Funciones de fechas*/
+
+SELECT hire_date,
+       DATE_TRUNC('month', hire_date) AS month_start
+FROM employees
+WHERE department_id = 50;
+
+
+SELECT hire_date,
+       DATE_TRUNC('year', hire_date) AS year_start
+FROM employees
+WHERE department_id = 50;
+
+
+SELECT last_name, hire_date + 60
+FROM employees;
+
+
+SELECT employee_id, (end_date -
+start_date)/365
+AS "Tenure in last job"
+FROM job_history;
+
+
+SELECT
+  employee_id,
+  hire_date,
+  ROUND(
+    EXTRACT(YEAR FROM AGE(CURRENT_DATE, hire_date)) * 12 +
+    EXTRACT(MONTH FROM AGE(CURRENT_DATE, hire_date))
+  ) AS tenure,
+  hire_date + INTERVAL '6 months' AS review,
+  -- Calcular próximo viernes después de hire_date
+  hire_date + ((5 - EXTRACT(DOW FROM hire_date) + 7) % 7) * INTERVAL '1 day' AS next_friday,
+  -- Último día del mes de hire_date
+  (date_trunc('month', hire_date) + INTERVAL '1 month' - INTERVAL '1 day')::date AS last_day
+FROM employees
+WHERE
+  (EXTRACT(YEAR FROM AGE(CURRENT_DATE, hire_date)) * 12 +
+   EXTRACT(MONTH FROM AGE(CURRENT_DATE, hire_date))) > 36;
